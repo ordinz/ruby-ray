@@ -203,7 +203,7 @@ module Ray
 end
 
 def ray(*args)
-  settings = {host: (ENV['MY_RAY_URL'] || "http://localhost"), port: 23517}
+  settings = {host: (ENV['MY_RAY_URL'] || "http://localhost"), port: (ENV['MY_RAY_PORT'] || 23517)}
 
   Ray::Ray.new(settings).send(*args)
 end
